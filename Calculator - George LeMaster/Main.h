@@ -20,6 +20,21 @@ public:
 	wxButton* num8Button = nullptr;
 	wxButton* num9Button = nullptr;
 
+	// Operator Buttons
+	wxButton* equalsButton = nullptr;
+	wxButton* cButton = nullptr;
+	wxButton* modButton = nullptr;
+	wxButton* plusButton = nullptr;
+	wxButton* minusButton = nullptr;
+	wxButton* divideButton = nullptr;
+	wxButton* multiplyButton = nullptr;
 
+	// Output Window
+	wxTextCtrl* outputWindow = nullptr;
+
+	// Output Format Buttons
+	wxButton* hexButton = nullptr;
+	wxButton* decButton = nullptr;
+	wxButton* binButton = nullptr;
 };
 

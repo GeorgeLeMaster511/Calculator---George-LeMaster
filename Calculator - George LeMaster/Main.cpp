@@ -2,6 +2,8 @@
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 700))
 {
+	wxFont().MakeBold();
+
 	num0Button = new wxButton(this, 100, "0", wxPoint(230, 550), wxSize(100, 100));
 	num1Button = new wxButton(this, 101, "1", wxPoint(10, 440), wxSize(100, 100));
 	num2Button = new wxButton(this, 102, "2", wxPoint(120,440), wxSize(100, 100));
@@ -12,4 +14,19 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 	num7Button = new wxButton(this, 107, "7", wxPoint(10, 220), wxSize(100, 100));
 	num8Button = new wxButton(this, 108, "8", wxPoint(120, 220), wxSize(100, 100));
 	num9Button = new wxButton(this, 109, "9", wxPoint(230, 220), wxSize(100, 100));
+
+	cButton = new wxButton(this, 120, "C", wxPoint(120, 550), wxSize(100, 100));
+	modButton = new wxButton(this, 130, "MOD", wxPoint(10, 550), wxSize(100, 100));
+
+	plusButton = new wxButton(this, 150, "+", wxPoint(340, 550), wxSize(100, 100));
+	minusButton = new wxButton(this, 160, "-", wxPoint(340, 440), wxSize(100, 100));
+	multiplyButton = new wxButton(this, 170, "X", wxPoint(340, 330), wxSize(100, 100));
+	divideButton = new wxButton(this, 180, "/", wxPoint(340, 220), wxSize(100, 100));
+
+	outputWindow = new wxTextCtrl(this, 200, "", wxPoint(10, 10), wxSize(430, 150));
+
+	decButton = new wxButton(this, 250, "DECIMAL", wxPoint(10, 170), wxSize(140, 40));
+	binButton = new wxButton(this, 260, "BINARY", wxPoint(155, 170), wxSize(140, 40));
+	hexButton = new wxButton(this, 270, "HEX", wxPoint(300, 170), wxSize(140, 40));
+
 }
