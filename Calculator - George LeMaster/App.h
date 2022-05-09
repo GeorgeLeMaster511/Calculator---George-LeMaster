@@ -1,8 +1,8 @@
 #pragma once
-class Calculator
+class App
 {
 
-
+	
 
 };
 
