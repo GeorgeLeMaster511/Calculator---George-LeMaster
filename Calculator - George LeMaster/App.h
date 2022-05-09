@@ -1,8 +1,16 @@
 #pragma once
-class App
+
+#include "wx/wx.h"
+#include "Main.h";
+
+class App : public wxApp
 {
 
-	
+public: 
+	virtual bool OnInit();
+
+private:
+	Main* mFrame1 = nullptr;
 
 };
 
