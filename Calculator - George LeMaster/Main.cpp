@@ -4,6 +4,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 {
 	wxFont().MakeBold();
 
+
 	num0Button = new wxButton(this, 100, "0", wxPoint(230, 550), wxSize(100, 100));
 	num1Button = new wxButton(this, 101, "1", wxPoint(10, 440), wxSize(100, 100));
 	num2Button = new wxButton(this, 102, "2", wxPoint(120,440), wxSize(100, 100));
