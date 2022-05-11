@@ -1,4 +1,5 @@
 #include "Main.h"
+#include <vector>
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
 	EVT_BUTTON(100, Main::OnButtonClick)
@@ -10,8 +11,12 @@ wxEND_EVENT_TABLE()
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 800), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER|wxMAXIMIZE_BOX))
 {
+
+	SetBackgroundColour(wxColour("#207d77"));
+
 	wxFont newFont(32, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	SetFont(newFont);
+	
 
 	wxFont labelFont(16, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 
@@ -25,8 +30,6 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 	num7Button = new wxButton(this, 107, "7", wxPoint(10, 220), wxSize(100, 100));
 	num8Button = new wxButton(this, 108, "8", wxPoint(120, 220), wxSize(100, 100));
 	num9Button = new wxButton(this, 109, "9", wxPoint(230, 220), wxSize(100, 100));
-
-
 
 	cButton = new wxButton(this, 120, "C", wxPoint(120, 550), wxSize(100, 100));
 	modButton = new wxButton(this, 130, "MOD", wxPoint(10, 550), wxSize(100, 100));
@@ -42,14 +45,30 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 	binButton = new wxButton(this, 260, "BINARY", wxPoint(155, 170), wxSize(140, 40));
 	hexButton = new wxButton(this, 270, "HEX", wxPoint(300, 170), wxSize(140, 40));
 
-	equalsButton = new wxButton(this, 270, "=", wxPoint(120, 660), wxSize(320, 90));
-	negateButton = new wxButton(this, 270, "+/-", wxPoint(10, 660), wxSize(100, 90));
+	equalsButton = new wxButton(this, 300, "=", wxPoint(120, 660), wxSize(320, 90));
+	negateButton = new wxButton(this, 400, "+/-", wxPoint(10, 660), wxSize(100, 90));
 
 	modButton->SetFont(labelFont);
 	decButton->SetFont(labelFont);
 	binButton->SetFont(labelFont);
 	hexButton->SetFont(labelFont);
 
+	num0Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num1Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num2Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num3Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num4Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num5Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num6Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num7Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num8Button->SetBackgroundColour(wxColour("#68e3b4"));
+	num9Button->SetBackgroundColour(wxColour("#68e3b4"));
+	cButton->SetBackgroundColour(wxColour("#99f7d3"));
+	modButton->SetBackgroundColour(wxColour("#99f7d3"));
+	negateButton->SetBackgroundColour(wxColour("#000000"));
+	equalsButton->SetBackgroundColour(wxColour("#ffffff"));
+	
+	outputWindow->SetBackgroundColour(wxColour("#99f7d3"));
 }
 
 void Main::OnButtonClick(wxCommandEvent& evt)
