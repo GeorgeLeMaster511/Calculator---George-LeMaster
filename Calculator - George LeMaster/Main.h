@@ -40,5 +40,7 @@ public:
 	wxButton* binButton = nullptr;
 
 	void OnButtonClick(wxCommandEvent& evt);
+
+	wxDECLARE_EVENT_TABLE();
 };
 

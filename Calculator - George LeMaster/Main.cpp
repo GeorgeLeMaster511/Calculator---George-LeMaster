@@ -1,7 +1,7 @@
 #include "Main.h"
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
-	
+	EVT_BUTTON(100, Main::OnButtonClick)
 wxEND_EVENT_TABLE()
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 800), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER|wxMAXIMIZE_BOX))
