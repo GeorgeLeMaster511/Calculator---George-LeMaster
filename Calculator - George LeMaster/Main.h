@@ -7,6 +7,7 @@ class Main : public wxFrame
 
 public:
 	Main();
+//	~Main();
 
 	// Number Buttons
 	wxButton* num0Button = nullptr;
@@ -22,6 +23,7 @@ public:
 
 	// Operator Buttons
 	wxButton* equalsButton = nullptr;
+	wxButton* negateButton = nullptr;
 	wxButton* cButton = nullptr;
 	wxButton* modButton = nullptr;
 	wxButton* plusButton = nullptr;
@@ -36,5 +38,7 @@ public:
 	wxButton* hexButton = nullptr;
 	wxButton* decButton = nullptr;
 	wxButton* binButton = nullptr;
+
+	void OnButtonClick(wxCommandEvent& evt);
 };
 
