@@ -2,6 +2,10 @@
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
 	EVT_BUTTON(100, Main::OnButtonClick)
+	EVT_BUTTON(101, Main::OnButtonClick)
+	EVT_BUTTON(102, Main::OnButtonClick)
+	EVT_BUTTON(103, Main::OnButtonClick)
+
 wxEND_EVENT_TABLE()
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 800), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER|wxMAXIMIZE_BOX))
@@ -48,7 +52,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 
 }
 
-void OnButtonClick(wxCommandEvent& evt)
+void Main::OnButtonClick(wxCommandEvent& evt)
 {
 	evt.Skip();
 }
