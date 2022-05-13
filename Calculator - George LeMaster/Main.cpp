@@ -6,17 +6,42 @@ wxBEGIN_EVENT_TABLE(Main, wxFrame)
 	EVT_BUTTON(101, Main::OnButtonClick)
 	EVT_BUTTON(102, Main::OnButtonClick)
 	EVT_BUTTON(103, Main::OnButtonClick)
+	EVT_BUTTON(104, Main::OnButtonClick)
+	EVT_BUTTON(105, Main::OnButtonClick)
+	EVT_BUTTON(106, Main::OnButtonClick)
+	EVT_BUTTON(107, Main::OnButtonClick)
+	EVT_BUTTON(108, Main::OnButtonClick)
+	EVT_BUTTON(109, Main::OnButtonClick)
+
+	EVT_BUTTON(120, Main::OnButtonClick)
+	EVT_BUTTON(130, Main::OnButtonClick)
+
+	EVT_BUTTON(150, Main::OnButtonClick)
+	EVT_BUTTON(160, Main::OnButtonClick)
+	EVT_BUTTON(170, Main::OnButtonClick)
+	EVT_BUTTON(180, Main::OnButtonClick)
+
+	EVT_BUTTON(200, Main::OnButtonClick)
+
+	EVT_BUTTON(250, Main::OnButtonClick)
+	EVT_BUTTON(260, Main::OnButtonClick)
+	EVT_BUTTON(270, Main::OnButtonClick)
+
+	EVT_BUTTON(300, Main::OnButtonClick)
+	EVT_BUTTON(400, Main::OnButtonClick)
 
 wxEND_EVENT_TABLE()
 
-Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 800), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER|wxMAXIMIZE_BOX))
+wxString outputString = "";
+
+Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 800), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX))
 {
 
 	SetBackgroundColour(wxColour("#207d77"));
 
 	wxFont newFont(32, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	SetFont(newFont);
-	
+
 
 	wxFont labelFont(16, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 
@@ -39,7 +64,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 	multiplyButton = new wxButton(this, 170, "X", wxPoint(340, 330), wxSize(100, 100));
 	divideButton = new wxButton(this, 180, "/", wxPoint(340, 220), wxSize(100, 100));
 
-	outputWindow = new wxTextCtrl(this, 200, "", wxPoint(10, 10), wxSize(430, 150));
+	outputWindow = new wxTextCtrl(this, 200, "", wxPoint(10, 10), wxSize(430, 150), wxTE_READONLY | wxTE_RIGHT);
 
 	decButton = new wxButton(this, 250, "DECIMAL", wxPoint(10, 170), wxSize(140, 40));
 	binButton = new wxButton(this, 260, "BINARY", wxPoint(155, 170), wxSize(140, 40));
@@ -65,13 +90,83 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 	num9Button->SetBackgroundColour(wxColour("#68e3b4"));
 	cButton->SetBackgroundColour(wxColour("#99f7d3"));
 	modButton->SetBackgroundColour(wxColour("#99f7d3"));
-	negateButton->SetBackgroundColour(wxColour("#000000"));
+	negateButton->SetBackgroundColour(wxColour("#00baff"));
 	equalsButton->SetBackgroundColour(wxColour("#ffffff"));
-	
+
 	outputWindow->SetBackgroundColour(wxColour("#99f7d3"));
 }
 
 void Main::OnButtonClick(wxCommandEvent& evt)
 {
+	int id = evt.GetId();
+
+	switch (id)
+	{
+	case 101:
+		outputString += "1";
+		break;
+	case 102:
+		outputString += "2";
+		break;
+	case 103:
+		outputString += "3";
+		break;
+	case 104:
+		outputString += "4";
+		break;
+	case 105:
+		outputString += "5";
+		break;
+	case 106:
+		outputString += "6";
+		break;
+	case 107:
+		outputString += "7";
+		break;
+	case 108:
+		outputString += "8";
+		break;
+	case 109:
+		outputString += "9";
+		break;
+	case 120:
+		outputString += "C";
+		break;
+	case 130:
+		outputString += "MOD";
+		break;
+	case 150:
+		outputString += "+";
+		break;
+	case 160:
+		outputString += "-";
+		break;
+	case 170:
+		outputString += "X";
+		break;
+	case 180:
+		outputString += "/";
+		break;
+	case 250:
+
+		break;
+	case 260:
+
+		break;
+	case 270:
+
+		break;
+	case 300:
+
+		break;
+	case 400:
+
+		break;
+	default:
+		break;
+	}
+
+	outputWindow->SetLabel(outputString);
+
 	evt.Skip();
 }
