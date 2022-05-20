@@ -110,6 +110,15 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 {
 	int id = evt.GetId();
 
+	//if (id > 99 && id < 110 && _processor->hasOperator == false && outputWindow->GetLabel() != "" && _processor->numOne != 0)
+	//{
+	//	outputString = "";
+	//	outputWindow->SetLabel(outputString);
+	//	_processor->numOne = 0;
+	//	_processor->numTwo = 0;
+	//	_processor->hasOperator = false;
+	//}
+
 	switch (id)
 	{
 	case 100:
@@ -190,16 +199,16 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 			switch (_processor->operatorIndex)
 			{
 			case 1:
-				result = _processor->Add();
+				result = _processor->commandVec[0]->Execute(_processor->numOne, _processor->numTwo);
 				break;
 			case 2:
-				result = _processor->Subtract();
+				result = _processor->commandVec[1]->Execute(_processor->numOne, _processor->numTwo);
 				break;
 			case 3:
-				result = _processor->Multiply();
+				result = _processor->commandVec[2]->Execute(_processor->numOne, _processor->numTwo);
 				break;
 			case 4:
-				result = _processor->Divide();
+				result = _processor->commandVec[3]->Execute(_processor->numOne, _processor->numTwo);
 				break;
 			case 5:
 				result = _processor->MOD();

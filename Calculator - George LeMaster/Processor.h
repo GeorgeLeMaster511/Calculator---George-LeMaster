@@ -1,7 +1,12 @@
 #pragma once
-
+#include "IBaseCommand.h"
+#include "AddCommand.h"
+#include "SubCommand.h"
+#include "MultiCommand.h"
+#include "DivCommand.h"
+#include <iostream>
 #include <vector>
-//#include "IBaseCommand.h"
+
 class Processor
 {
 
@@ -24,12 +29,17 @@ public:
 	float numTwo;
 	int operatorIndex;
 
-	//std::vector<IBaseCommand> commandVec;
+	std::vector<IBaseCommand*> commandVec;
+
+	AddCommand* addCommand;
+	SubCommand* subCommand;
+	MultiCommand* multiCommand;
+	DivCommand* divCommand;
+
 
 	bool hasOperator = false;
 
-	float Add() { return numOne + numTwo; }
-	float Subtract() { return numOne - numTwo; }
+
 	float Multiply() { return numOne * numTwo; }
 	float Divide() { return numOne / numTwo; }
 	int MOD() { return (int)numOne % (int)numTwo; }
