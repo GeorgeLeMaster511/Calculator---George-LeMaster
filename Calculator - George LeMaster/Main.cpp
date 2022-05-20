@@ -1,8 +1,11 @@
 #include "Main.h"
 #include "ButtonFactory.h";
 #include <vector>
+#include <string>
+#include "Processor.h"
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
+
 	EVT_BUTTON(100, Main::OnButtonClick)
 	EVT_BUTTON(101, Main::OnButtonClick)
 	EVT_BUTTON(102, Main::OnButtonClick)
@@ -34,6 +37,8 @@ wxBEGIN_EVENT_TABLE(Main, wxFrame)
 wxEND_EVENT_TABLE()
 
 wxString outputString = "";
+Processor* _processor = Processor::GetInstance();
+float result = 0;
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(470, 800), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX))
 {
@@ -97,6 +102,8 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calcualtor", wxPoint(30, 30), wxSize(
 	equalsButton->SetBackgroundColour(wxColour("#ffffff"));
 
 	outputWindow->SetBackgroundColour(wxColour("#99f7d3"));
+
+
 }
 
 void Main::OnButtonClick(wxCommandEvent& evt)
@@ -136,22 +143,36 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 		outputString += "9";
 		break;
 	case 120:
-		outputString += "C";
+		//outputString += "C";
+		outputString = "";
+		_processor->numOne = 0;
+		_processor->numTwo = 0;
+		_processor->hasOperator = false;
 		break;
 	case 130:
-		outputString += "MOD";
+		//outputString += "MOD";
+		ConvertToInt(1);
+		_processor->SetOperator(5);
 		break;
 	case 150:
-		outputString += "+";
+		//outputString += "+";
+		ConvertToInt(1);
+		_processor->SetOperator(1);
 		break;
 	case 160:
-		outputString += "-";
+		//outputString += "-";
+		ConvertToInt(1);
+		_processor->SetOperator(2);
 		break;
 	case 170:
-		outputString += "X";
+		//outputString += "X";
+		ConvertToInt(1);
+		_processor->SetOperator(3);
 		break;
 	case 180:
-		outputString += "/";
+		//outputString += "/";
+		ConvertToInt(1);
+		_processor->SetOperator(4);
 		break;
 	case 250:
 
@@ -163,10 +184,36 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 
 		break;
 	case 300:
+		if (_processor->hasOperator == true)
+		{
+			ConvertToInt(2);
+			switch (_processor->operatorIndex)
+			{
+			case 1:
+				result = _processor->Add();
+				break;
+			case 2:
+				result = _processor->Subtract();
+				break;
+			case 3:
+				result = _processor->Multiply();
+				break;
+			case 4:
+				result = _processor->Divide();
+				break;
+			case 5:
+				result = _processor->MOD();
+				break;
+			default:
+				result = 0;
+				break;
+			}
 
-		break;
+			outputString = std::to_string(result);
+
+		}
+
 	case 400:
-
 		break;
 	default:
 		break;
@@ -175,4 +222,22 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 	outputWindow->SetLabel(outputString);
 
 	evt.Skip();
+}
+
+void Main::ConvertToInt(int numToConvert = 2)
+{
+	if (outputString != "") {
+		float tempNum = std::stof((std::string)outputWindow->GetLabel());
+
+		if (numToConvert == 1)
+		{
+			_processor->numOne = tempNum;
+		}
+		else
+		{
+			_processor->numTwo = tempNum;
+		}
+
+		outputString = "";
+	}
 }
