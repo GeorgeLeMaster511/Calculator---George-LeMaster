@@ -40,6 +40,7 @@ public:
 	wxButton* binButton = nullptr;
 
 	void OnButtonClick(wxCommandEvent& evt);
+	void ConvertToInt(int numToConvert);
 
 	wxDECLARE_EVENT_TABLE();
 };
