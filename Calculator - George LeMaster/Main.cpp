@@ -212,6 +212,7 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 				break;
 			case 5:
 				result = _processor->MOD();
+
 				break;
 			default:
 				result = 0;
