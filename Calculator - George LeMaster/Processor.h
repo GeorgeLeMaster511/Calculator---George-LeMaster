@@ -1,8 +1,12 @@
 #pragma once
+
+#include <vector>
+//#include "IBaseCommand.h"
 class Processor
 {
 
 public:
+
 	Processor(const Processor& _copy) = delete;
 	Processor& operator=(const Processor& _assign) = delete;
 
@@ -19,6 +23,8 @@ public:
 	float numOne;
 	float numTwo;
 	int operatorIndex;
+
+	//std::vector<IBaseCommand> commandVec;
 
 	bool hasOperator = false;
 

@@ -1,5 +1,7 @@
 #include "Processor.h"
 #include "Main.h"
+
+#include <vector>
 Processor::Processor()
 {
 	
