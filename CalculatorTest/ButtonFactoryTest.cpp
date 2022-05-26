@@ -9,11 +9,11 @@ void ButtonFactoryTest::CreateButtonWithIDof100()
 	std::cout << "CreateButtonWithIDof100: ";
 	if (newButton->GetId() == 100)
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -25,11 +25,11 @@ void ButtonFactoryTest::CreateButtonWithIDof200()
 	std::cout << "CreateButtonWithIDof200: ";
 	if (newButton->GetId() == 200)
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -41,11 +41,11 @@ void ButtonFactoryTest::CreateButtonWithIDof300()
 	std::cout << "CreateButtonWithIDof300: ";
 	if (newButton->GetId() == 300)
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -57,11 +57,11 @@ void ButtonFactoryTest::CreateButtonWithIDof400()
 	std::cout << "CreateButtonWithIDof400: ";
 	if (newButton->GetId() == 400)
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -73,11 +73,11 @@ void ButtonFactoryTest::CreateButtonWithLabelof500()
 	std::cout << "CreateButtonWithIDof500: ";
 	if (newButton->GetId() == 500)
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -90,11 +90,11 @@ void ButtonFactoryTest::CreateButtonWithLabelof600()
 	wxString newString = "600";
 	if (newButton->GetLabel().CompareTo(newString))
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -107,11 +107,11 @@ void ButtonFactoryTest::CreateButtonWithLabelof700()
 	wxString newString = "700";
 	if (newButton->GetLabel().CompareTo(newString))
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -124,11 +124,11 @@ void ButtonFactoryTest::CreateButtonWithLabelof800()
 	wxString newString = "800";
 	if (newButton->GetLabel().CompareTo(newString))
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -141,11 +141,11 @@ void ButtonFactoryTest::CreateButtonWithLabelof900()
 	wxString newString = "900";
 	if (newButton->GetLabel().CompareTo(newString))
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }
 
@@ -158,10 +158,10 @@ void ButtonFactoryTest::CreateButtonWithLabelof1000()
 	wxString newString = "1000";
 	if (newButton->GetLabel().CompareTo(newString))
 	{
-		std::cout << "\ttrue\n";
+		std::cout << "\tpass\n";
 	}
 	else
 	{
-		std::cout << "\tfalse\n";
+		std::cout << "\tfail\n";
 	}
 }

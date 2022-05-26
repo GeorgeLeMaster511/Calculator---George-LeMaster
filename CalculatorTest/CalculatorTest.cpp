@@ -31,5 +31,6 @@ int main()
 	processorTest->Multi4By4();
 	processorTest->Div4By4();
 	processorTest->Test16asBin();
+	processorTest->Test16asHex();
 
 }

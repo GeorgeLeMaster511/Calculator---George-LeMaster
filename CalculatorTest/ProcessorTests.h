@@ -21,7 +21,7 @@ public:
 	void Multi4By4();
 	void Div4By4();
 	void Test16asBin();
-
+	void Test16asHex();
 
 };
 
