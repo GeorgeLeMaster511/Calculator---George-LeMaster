@@ -9,8 +9,6 @@ public:
 	Main();
 //	~Main();
 
-	int outputMode = 1;
-
 	// Number Buttons
 	wxButton* num0Button = nullptr;
 	wxButton* num1Button = nullptr;
