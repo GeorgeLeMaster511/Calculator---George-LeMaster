@@ -40,8 +40,7 @@ public:
 	bool hasOperator = false;
 
 
-	float Multiply() { return numOne * numTwo; }
-	float Divide() { return numOne / numTwo; }
+
 	int MOD() { return (int)numOne % (int)numTwo; }
 
 	void SetOperator(int input);
