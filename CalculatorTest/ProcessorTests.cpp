@@ -127,3 +127,13 @@ void ProcessorTests::Div4By4()
 		std::cout << "\tfalse\n";
 	}
 }
+
+void ProcessorTests::Test16asBin()
+{
+
+	if (std::stoi(testProcessor->returnFormattedResult(2, 16)) == 10000)
+	{
+		std::cout << "\ttrue\n";
+	}
+
+}

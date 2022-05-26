@@ -224,35 +224,38 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 				break;
 			}
 
-			if (outputMode == 1)
-			{
-				outputString = std::to_string(result);
-			}
-			else if (outputMode == 2)
-			{
-				std::string string;
-				string = std::bitset<32>(result).to_string();
-				
-				for (int i = 0; i < 32; i++)
-				{
-					if (stoi(string.substr(i)) != stoi(string))
-					{
-						string = string.substr(i-1);
-						break;
-					}
-				}
-				outputString = string;
-			}
-			else if (outputMode == 3)
-			{
+			outputString = _processor->returnFormattedResult(outputMode, result);
 
-				std::ostringstream ss;
-				ss << std::hex << (int)result;
-				std::string resultString = ss.str();
+			//if (outputMode == 1)
+			//{
+			//	outputString = std::to_string(result);
+			//}
+			//else if (outputMode == 2)
+			//{
+			//	std::string string;
+			//	string = std::bitset<32>(result).to_string();
+			//	
+			//	for (int i = 0; i < 32; i++)
+			//	{
+			//		if (stoi(string.substr(i)) != stoi(string))
+			//		{
+			//			string = string.substr(i-1);
+			//			break;
+			//		}
+			//	}
+			//	outputString = string;
+			//}
+			//else if (outputMode == 3)
+			//{
 
-				outputString = resultString;
 
-			}
+			//	std::ostringstream ss;
+			//	ss << std::hex << (int)result;
+			//	std::string resultString = ss.str();
+
+			//	outputString = resultString;
+
+			//}
 
 		}
 

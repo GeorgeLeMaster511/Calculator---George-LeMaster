@@ -4,7 +4,9 @@
 #include "SubCommand.h"
 #include "MultiCommand.h"
 #include "DivCommand.h"
+#include <bitset>
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 class Processor
@@ -39,7 +41,7 @@ public:
 
 	bool hasOperator = false;
 
-
+	std::string returnFormattedResult(int resultType, float input);
 
 	int MOD() { return (int)numOne % (int)numTwo; }
 

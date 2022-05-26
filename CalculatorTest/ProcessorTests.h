@@ -20,6 +20,7 @@ public:
 	void Sub4Minus4();
 	void Multi4By4();
 	void Div4By4();
+	void Test16asBin();
 
 
 };
