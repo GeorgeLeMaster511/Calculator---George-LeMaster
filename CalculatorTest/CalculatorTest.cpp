@@ -24,4 +24,10 @@ int main()
 
 	processorTest->Add2Plus2();
 	processorTest->Sub2Minus2();
+	processorTest->Multi2By2();
+	processorTest->Div2By2();
+	processorTest->Add4Plus4();
+	processorTest->Sub4Minus4();
+	processorTest->Multi4By4();
+	processorTest->Div4By4();
 }
