@@ -281,7 +281,7 @@ void Main::ConvertToInt(int numToConvert = 2)
 		}
 		else
 		{
-			_processor->numTwo = tempNum;
+			_processor->numTwo = tempNum; 
 		}
 
 		outputString = "";
