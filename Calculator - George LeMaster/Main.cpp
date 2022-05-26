@@ -3,6 +3,9 @@
 #include <vector>
 #include <string>
 #include "Processor.h"
+#include <bitset>
+#include <iostream>
+#include <sstream>
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
 
@@ -184,13 +187,15 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 		_processor->SetOperator(4);
 		break;
 	case 250:
-
+		outputMode = 1;
 		break;
 	case 260:
-
+		if (outputMode != 2) {
+			outputMode = 2;
+		}
 		break;
 	case 270:
-
+		outputMode = 3;
 		break;
 	case 300:
 		if (_processor->hasOperator == true)
@@ -219,7 +224,38 @@ void Main::OnButtonClick(wxCommandEvent& evt)
 				break;
 			}
 
-			outputString = std::to_string(result);
+			outputString = _processor->returnFormattedResult(outputMode, result);
+
+			//if (outputMode == 1)
+			//{
+			//	outputString = std::to_string(result);
+			//}
+			//else if (outputMode == 2)
+			//{
+			//	std::string string;
+			//	string = std::bitset<32>(result).to_string();
+			//	
+			//	for (int i = 0; i < 32; i++)
+			//	{
+			//		if (stoi(string.substr(i)) != stoi(string))
+			//		{
+			//			string = string.substr(i-1);
+			//			break;
+			//		}
+			//	}
+			//	outputString = string;
+			//}
+			//else if (outputMode == 3)
+			//{
+
+
+			//	std::ostringstream ss;
+			//	ss << std::hex << (int)result;
+			//	std::string resultString = ss.str();
+
+			//	outputString = resultString;
+
+			//}
 
 		}
 
